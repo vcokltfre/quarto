@@ -35,7 +35,7 @@ var winLocations = []winLocation{
 	{{2, 2}, {3, 2}, {2, 3}, {3, 3}}, // Bottom Right
 }
 
-func (b *board) Clone() *board {
+func (b *board) clone() *board {
 	clone := &board{}
 
 	for x, row := range b {
@@ -44,7 +44,7 @@ func (b *board) Clone() *board {
 				continue
 			}
 
-			clone[x][y] = piece.Clone()
+			clone[x][y] = piece.clone()
 		}
 	}
 

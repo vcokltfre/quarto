@@ -24,7 +24,7 @@ func (g *QuartoGame) createNextBoard() *board {
 		return &board{}
 	}
 
-	return g.getCurrentBoard().Clone()
+	return g.getCurrentBoard().clone()
 }
 
 func (g *QuartoGame) isPieceInUse(piece *Piece) bool {
@@ -34,7 +34,7 @@ func (g *QuartoGame) isPieceInUse(piece *Piece) bool {
 
 	for _, row := range g.getCurrentBoard() {
 		for _, p := range row {
-			if piece.Is(p) {
+			if piece.is(p) {
 				return true
 			}
 		}
@@ -115,6 +115,10 @@ func (g *QuartoGame) IsWon() (bool, int) {
 	}
 
 	return currentBoard.IsWon(), len(g.boards) % 2
+}
+
+func (g *QuartoGame) IsOver() bool {
+	return len(g.boards) == 16
 }
 
 func (g *QuartoGame) AsBytes() []byte {

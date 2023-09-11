@@ -7,7 +7,7 @@ type Piece struct {
 	Hole  bool
 }
 
-func (p *Piece) Is(other *Piece) bool {
+func (p *Piece) is(other *Piece) bool {
 	if other == nil {
 		return false
 	}
@@ -18,7 +18,7 @@ func (p *Piece) Is(other *Piece) bool {
 		p.Hole == other.Hole
 }
 
-func (p *Piece) Clone() *Piece {
+func (p *Piece) clone() *Piece {
 	return &Piece{
 		Tall:  p.Tall,
 		Light: p.Light,
