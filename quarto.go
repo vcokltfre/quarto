@@ -131,6 +131,14 @@ func (g *QuartoGame) AsBytes() []byte {
 	return output
 }
 
+func (g *QuartoGame) ExportBoard() ([]byte, error) {
+	if !g.started {
+		return g.createNextBoard().AsJSON()
+	}
+
+	return g.getCurrentBoard().AsJSON()
+}
+
 func New() *QuartoGame {
 	return &QuartoGame{
 		boards:    []*board{},

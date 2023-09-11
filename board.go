@@ -1,5 +1,7 @@
 package quarto
 
+import "encoding/json"
+
 type (
 	pieceLocation [2]uint8
 	winLocation   [4]pieceLocation
@@ -33,6 +35,10 @@ var winLocations = []winLocation{
 	{{0, 2}, {1, 2}, {0, 3}, {1, 3}}, // Bottom Left
 	{{1, 2}, {2, 2}, {1, 3}, {2, 3}}, // Bottom Middle
 	{{2, 2}, {3, 2}, {2, 3}, {3, 3}}, // Bottom Right
+}
+
+func (b *board) AsJSON() ([]byte, error) {
+	return json.Marshal(b)
 }
 
 func (b *board) clone() *board {

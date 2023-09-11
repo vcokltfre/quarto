@@ -14,11 +14,12 @@ type quarto.Piece struct {
 
 type quarto.Game struct {
     func Nominate(piece Piece)  error
-    func Place(x, y uint8)      error       // Bounded from (0, 0) to (3, 3)
+    func Place(x, y uint8)      error           // Bounded from (0, 0) to (3, 3)
     func GetAvailablePieces()   []Piece
-    func IsWon()                (bool, int) // isWon, winningPlayer
+    func IsWon()                (bool, int)     // isWon, winningPlayer
     func IsOver()               bool
-    func AsBytes()              []byte      // in format defined below
+    func AsBytes()              []byte          // in format defined below
+    func ExportBoard()          ([]byte, error) // json representation
 }
 
 func New() *quarto.Game

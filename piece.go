@@ -1,10 +1,10 @@
 package quarto
 
 type Piece struct {
-	Tall  bool
-	Light bool
-	Round bool
-	Hole  bool
+	Tall  bool `json:"t"`
+	Light bool `json:"l"`
+	Round bool `json:"r"`
+	Hole  bool `json:"h"`
 }
 
 func (p *Piece) is(other *Piece) bool {
