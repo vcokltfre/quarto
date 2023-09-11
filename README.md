@@ -6,10 +6,10 @@ A backend implementation of Quarto's core mechanics as a library.
 
 ```go
 type quarto.Piece struct {
-	Tall  bool
-	Light bool
-	Round bool
-	Hole  bool
+    Tall  bool
+    Light bool
+    Round bool
+    Hole  bool
 }
 
 type quarto.Game struct {
